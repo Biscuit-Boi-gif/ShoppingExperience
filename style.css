@@ -44,7 +44,7 @@ aside a {
 }
 
 footer {
-    clear:all;
+    clear:both;
     color:#4d4d4d;
     background-color:#eeeeee;
     height:50px;
@@ -111,7 +111,7 @@ footer {
 #copyright {
     width:200px;
     margin:0 auto;
-    font-weight:italic;
+    font-style:italic;
     padding-top:35px;
 }
 
