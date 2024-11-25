@@ -258,6 +258,7 @@ footer {
 
 .cartPrice {
     flex:10%;
+    padding-left:10px;
 }
 
 .removeMargins {
