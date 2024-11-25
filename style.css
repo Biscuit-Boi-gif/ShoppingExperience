@@ -17,7 +17,7 @@ nav a {
     padding-left:5%;
 }
 
-a :hover {
+nav a:hover {
     color:#111111;
 }
 
@@ -48,8 +48,10 @@ footer {
     color:#4d4d4d;
     background-color:#eeeeee;
     height:50px;
-    margin-top:10px;
-    margin-bottom:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:0;
+    padding-right:0;
     font-size:80%;
 }
 
@@ -57,6 +59,8 @@ footer {
     background-color: #037dbe;
     padding-top:5px;
     padding-bottom:5px;
+    padding-left:0px;
+    padding-right:0px;
 }
 
 #mainContentContainer {
@@ -71,6 +75,8 @@ footer {
     text-align:center;
     padding-top:5px;
     padding-bottom:5px;
+    padding-left:0;
+    padding-right:0;
 }
 
 #sideBarContainer {
@@ -93,6 +99,8 @@ footer {
     width:40px;
     padding-top:6px;
     padding-left:6px;
+    padding-bottom:0;
+    padding-right:0;
 }
 
 #footerNav a {
@@ -104,7 +112,7 @@ footer {
     padding-top:17px;
 }
 
-#footerNav a :hover {
+#footerNav a:hover {
     color:#000000;
 }
 
