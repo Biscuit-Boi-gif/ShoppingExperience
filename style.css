@@ -48,8 +48,10 @@ footer {
     color:#4d4d4d;
     background-color:#eeeeee;
     height:50px;
-    margin-top:10px;
-    margin-bottom:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:0;
+    padding-right:0;
     font-size:80%;
 }
 
@@ -57,6 +59,8 @@ footer {
     background-color: #037dbe;
     padding-top:5px;
     padding-bottom:5px;
+    padding-left:0;
+    padding-right:0;
 }
 
 #mainContentContainer {
@@ -71,6 +75,8 @@ footer {
     text-align:center;
     padding-top:5px;
     padding-bottom:5px;
+    padding-left:0;
+    padding-right:0;
 }
 
 #sideBarContainer {
@@ -93,7 +99,9 @@ footer {
 #socialMediaLinks img {
     width:40px;
     padding-top:6px;
+    padding-bottom:0;
     padding-left:6px;
+    padding-right:0;
 }
 
 #footerNav a {
