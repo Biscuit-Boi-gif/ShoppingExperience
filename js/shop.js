@@ -1,4 +1,5 @@
 const cardContainer = document.querySelector("#cardContainer");
+
 function addProducts() {
     products.forEach( individualCard => {
         cardContainer.innerHTML += `
@@ -14,15 +15,37 @@ function addProducts() {
     });
 }
 addProducts();
-
-/*
-                <div class="card" id="cardNumber1">
-                    <img src="images/images/shop/thumbnails/ClownUmbrella_Thumb.jpg">
-                    <div class="cardText">
-                        <h4>Clown Umbrella</h4>
-                        <p>A porcelain figurine of a clown holding an umbrella and riding a unicycle</p>
-                        <p>&dollar;29.95</p>
-                        <button class="cartButton">Add to Cart</button>
+function saveToLocalStorage() {
+    let cartButton = document.getElementsByClassName("cartButton");
+    for(let i = 0; i < cartButton.length; i++) {
+        cartButton[i].addEventListener("click", () => {
+            let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
+            cart.push(selectedProduct);
+            console.log(cart);
+            localStorage.setItem("CART", JSON.stringify(cart) );
+        displayCart();
+        });
+    }
+}
+saveToLocalStorage();
+function displayCart() {
+    clearStorageAndCart();
+    sideBarContainer.innerHTML = "";
+    cart.forEach((cartItem) => {
+        sideBarContainer.innerHTML += `<div class="tableRow">
+                    <div class="tableCell">
+                        <p>${cartItem.productName}</p>
+                    </div>
+                    <div class="tableCell">
+                        <p>&dollar;${cartItem.price}</p>
                     </div>
                 </div>
-*/
+                <div class="tableRow">
+                    <div class="tableCell borderBottom">
+
+                    </div>
+                    <a id="${cartItem.id}" class="tableCell borderBottom removeLink" href="#">Remove</a>
+                </div>`;
+    });
+};
+displayCart();
