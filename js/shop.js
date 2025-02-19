@@ -21,7 +21,6 @@ function saveToLocalStorage() {
         cartButton[i].addEventListener("click", () => {
             let selectedProduct = products.find( (product) => product.id == cartButton[i].id);
             cart.push(selectedProduct);
-            console.log(cart);
             localStorage.setItem("CART", JSON.stringify(cart) );
         displayCart();
         });
@@ -34,10 +33,10 @@ function displayCart() {
     cart.forEach((cartItem) => {
         sideBarContainer.innerHTML += `<div class="tableRow">
                     <div class="tableCell">
-                        <p>${cartItem.productName}</p>
+                        ${cartItem.productName}
                     </div>
                     <div class="tableCell">
-                        <p>&dollar;${cartItem.price}</p>
+                        &dollar;${cartItem.price}
                     </div>
                 </div>
                 <div class="tableRow">
@@ -47,5 +46,6 @@ function displayCart() {
                     <a id="${cartItem.id}" class="tableCell borderBottom removeLink" href="#">Remove</a>
                 </div>`;
     });
+    removeFromCart();
 };
 displayCart();
