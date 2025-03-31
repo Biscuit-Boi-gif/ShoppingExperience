@@ -23,12 +23,12 @@ function removeFromCart() {
             }
             cart.splice(itemIndex, 1);
             localStorage.setItem('CART', JSON.stringify(cart) );
-            displayCart();
             if (typeof displayCart === "function") {
                 displayCart();
             }
             if (typeof displayCartProducts === "function") {
                 displayCartProducts();
+                displayOrderSummary();
             }
             if (cart.length == 0) {
                 localStorage.clear();
@@ -41,13 +41,13 @@ function clearCart() {
     const clearCartButton = document.getElementById("clearCartButton");
     clearCartButton.addEventListener("click", () => {
         cart = [];
-        localStorage.clear();displayCart();
+        localStorage.clear();
+        if (typeof displayCart === "function") {
+            displayCart();
+        }
+        if (typeof displayCartProducts === "function") {
+            displayCartProducts();
+        }
     });
-    if (typeof displayCart === "function") {
-        displayCart();
-    }
-    if (typeof displayCartProducts === "function") {
-        displayCartProducts();
-    }
 }
 clearCart();
